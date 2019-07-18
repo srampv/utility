@@ -54,7 +54,7 @@ public class TemplateGenerator {
             ps[0] = ps1;
             ps[1] = ps123;
             int count[] = {1};
-            int lineCount = Files.readAllLines(Paths.get("C:\\Users\\venkpi\\Downloads\\bittx.html")).size()/2;
+            int lineCount = Files.readAllLines(Paths.get("C:\\Users\\venkpi\\Downloads\\bittx.html")).size() / 2;
             final int sum[] = new int[]{lineCount};
             final StringBuffer line1 = new StringBuffer();
             Files.readAllLines(Paths.get("C:\\Users\\venkpi\\Downloads\\bittx.html")).forEach(c -> {
@@ -75,7 +75,7 @@ public class TemplateGenerator {
                         //start
                         File f1 = new File("c:\\users\\VenkPi\\Downloads\\win-ram.bat");
 
-                        ps[1].println("C:\\Users\\venkpi\\Documents\\sendme \"xyz@blogger.com\" \"Bit Txns %Date% %time%\" C:\\Users\\venkpi\\Downloads\\" + fileName.toString() + " \"Root:" + line1 + "\"");
+                        ps[1].println("C:\\Users\\venkpi\\Documents\\sendme \"xyz@blogger.com\" \"Bit Txns %Date% %time%\" C:\\Users\\venkpi\\Downloads\\" + fileName.toString() + " \"Root:" + line1.toString().replaceAll("\"", "\\\"") + "\"");
 
                         //end
                         ps[0].println(line1.toString());
@@ -93,7 +93,7 @@ public class TemplateGenerator {
                     + "       fetch(\"https://blockchain.info/rawtx/\"+val+\"?cors=true\").then(r => r.json()).then(m => {document.querySelector(\"textarea#data\"+count).innerText=JSON.stringify(m);});"
                     + "}"
                     + "</script>");
-            ps[1].println("C:\\Users\\venkpi\\Documents\\sendme \"xyz@blogger.com\" \"Bit Txns %Date% %time%\" C:\\Users\\venkpi\\Downloads\\" + fileName + " \"Root:" + line1 + "\"");
+            ps[1].println("C:\\Users\\venkpi\\Documents\\sendme \"xyz@blogger.com\" \"Bit Txns %Date% %time%\" C:\\Users\\venkpi\\Downloads\\" + fileName + " \"Root:" + line1.toString().replaceAll("\"", "\\\"") + "\"");
 //            ps.print(DATA);
 //            ps.close();
 
